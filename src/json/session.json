@@ -1,0 +1,42 @@
+[
+    {
+        "faculty": "Science",
+        "department": "Biology",
+        "level": "100",
+        "semester": "First",
+        "session": "2023/2024",
+        "timetable": "Mon 9-11, Wed 2-4"
+    },
+    {
+        "faculty": "Engineering",
+        "department": "Mechanical",
+        "level": "200",
+        "semester": "Second",
+        "session": "2023/2024",
+        "timetable": "Tue 10-12, Thu 3-5"
+    },
+    {
+        "faculty": "Arts",
+        "department": "History",
+        "level": "300",
+        "semester": "First",
+        "session": "2023/2024",
+        "timetable": "Mon 11-1, Fri 2-4"
+    },
+    {
+        "faculty": "Business",
+        "department": "Finance",
+        "level": "400",
+        "semester": "Second",
+        "session": "2023/2024",
+        "timetable": "Wed 9-11, Fri 1-3"
+    },
+    {
+        "faculty": "Medicine",
+        "department": "Nursing",
+        "level": "500",
+        "semester": "First",
+        "session": "2023/2024",
+        "timetable": "Tue 1-3, Thu 10-12"
+    }
+]
