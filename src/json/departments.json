@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Department of Computer Science",
+        "faculty": "Faculty of Science"
+    },
+    {
+        "name": "Department of Mechanical Engineering",
+        "faculty": "Faculty of Engineering"
+    },
+    {
+        "name": "Department of English",
+        "faculty": "Faculty of Arts"
+    },
+    {
+        "name": "Department of Business Administration",
+        "faculty": "Faculty of Business"
+    },
+    {
+        "name": "Department of Medicine",
+        "faculty": "Faculty of Medicine"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "faculty": "Science",
+        "department": "Computer Science",
+        "level": "Undergraduate",
+        "semester": "Fall",
+        "session": "2023/2024",
+        "timetable": "Monday 10:00 AM - 12:00 PM"
+    },
+    {
+        "faculty": "Arts",
+        "department": "History",
+        "level": "Undergraduate",
+        "semester": "Spring",
+        "session": "2023/2024",
+        "timetable": "Tuesday 1:00 PM - 3:00 PM"
+    },
+    {
+        "faculty": "Engineering",
+        "department": "Mechanical Engineering",
+        "level": "Graduate",
+        "semester": "Summer",
+        "session": "2023/2024",
+        "timetable": "Wednesday 9:00 AM - 11:00 AM"
+    },
+    {
+        "faculty": "Medicine",
+        "department": "Nursing",
+        "level": "Undergraduate",
+        "semester": "Winter",
+        "session": "2023/2024",
+        "timetable": "Thursday 2:00 PM - 4:00 PM"
+    },
+    {
+        "faculty": "Business",
+        "department": "Marketing",
+        "level": "Graduate",
+        "semester": "Fall",
+        "session": "2023/2024",
+        "timetable": "Friday 11:00 AM - 1:00 PM"
+    },
+    {
+        "faculty": "Law",
+        "department": "Corporate Law",
+        "level": "Undergraduate",
+        "semester": "Spring",
+        "session": "2023/2024",
+        "timetable": "Monday 3:00 PM - 5:00 PM"
+    },
+    {
+        "faculty": "Education",
+        "department": "Primary Education",
+        "level": "Graduate",
+        "semester": "Summer",
+        "session": "2023/2024",
+        "timetable": "Tuesday 10:00 AM - 12:00 PM"
+    },
+    {
+        "faculty": "Science",
+        "department": "Physics",
+        "level": "Undergraduate",
+        "semester": "Winter",
+        "session": "2023/2024",
+        "timetable": "Wednesday 1:00 PM - 3:00 PM"
+    },
+    {
+        "faculty": "Arts",
+        "department": "Philosophy",
+        "level": "Graduate",
+        "semester": "Fall",
+        "session": "2023/2024",
+        "timetable": "Thursday 9:00 AM - 11:00 AM"
+    },
+    {
+        "faculty": "Engineering",
+        "department": "Civil Engineering",
+        "level": "Undergraduate",
+        "semester": "Spring",
+        "session": "2023/2024",
+        "timetable": "Friday 2:00 PM - 4:00 PM"
+    }
+]

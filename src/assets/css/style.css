@@ -1,0 +1,58 @@
+.sidebar .active {
+    background: #FFF;
+    margin-right: 0 !important;
+    border-radius: 40px;
+    color: #186784;
+  }
+  
+  
+    /* Scroll bar */
+      ::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #dbdbdb;
+      border-radius: 4px;
+    }
+    
+    /* Other browsers */
+    ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-track-piece {
+      background-color: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #dbdbdb;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #dbdbdb;
+    }
+    
+    ::-webkit-scrollbar-button {
+      display: none;
+    }
+    
+    *::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+      background-color: #dbdbdb;
+      border-radius: 4px;
+    }
+
+    select {
+      background-position: right 0.2rem center !important;
+      background-repeat: no-repeat;
+    }  
+
+    .go3958317564{
+      font-size: 13px !important;
+      font-weight: light;
+  }

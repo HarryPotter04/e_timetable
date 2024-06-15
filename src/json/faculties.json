@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Faculty of Science",
+        "acronym": "FOS"
+    },
+    {
+        "name": "Faculty of Engineering",
+        "acronym": "FOE"
+    },
+    {
+        "name": "Faculty of Arts",
+        "acronym": "FOA"
+    }
+]

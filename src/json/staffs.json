@@ -1,0 +1,22 @@
+[
+    {
+        "name": "John Doe",
+        "role": "Professor"
+    },
+    {
+        "name": "Jane Smith",
+        "role": "Assistant Professor"
+    },
+    {
+        "name": "Emily Johnson",
+        "role": "Lecturer"
+    },
+    {
+        "name": "Michael Brown",
+        "role": "Research Assistant"
+    },
+    {
+        "name": "Sarah Davis",
+        "role": "Administrative Staff"
+    }
+]
