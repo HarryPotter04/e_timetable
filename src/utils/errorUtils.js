@@ -1,10 +1,14 @@
 export function getErrorMessage(error) {
-    return (
-        error.response.data.errors[0] || error.response.data.error || error.response.data.errors ||
-        (error.response &&
-          error.response.data &&
-          error.response.data.message && error.response.data.error ) ||
-        error.message ||
-        error.toString()
-    );
+  let errorMsg = "";
+  if (error.response && error.response.data.error) {
+    errorMsg = error.response.data.error[0];
+  } else if (error.response && error.response.data.message) {
+    errorMsg = error.response.data.message;
+  } else if (error.response && error.response.data.detail) {
+    errorMsg = error.response.data.detail;
+  } else {
+    errorMsg = error.message;
+  }
+
+    return errorMsg;
 }

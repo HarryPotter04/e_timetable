@@ -5,7 +5,7 @@
         "level": "Undergraduate",
         "semester": "Fall",
         "session": "2023/2024",
-        "timetable": "Monday 10:00 AM - 12:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Arts",
@@ -13,7 +13,7 @@
         "level": "Undergraduate",
         "semester": "Spring",
         "session": "2023/2024",
-        "timetable": "Tuesday 1:00 PM - 3:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Engineering",
@@ -21,7 +21,7 @@
         "level": "Graduate",
         "semester": "Summer",
         "session": "2023/2024",
-        "timetable": "Wednesday 9:00 AM - 11:00 AM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Medicine",
@@ -29,7 +29,7 @@
         "level": "Undergraduate",
         "semester": "Winter",
         "session": "2023/2024",
-        "timetable": "Thursday 2:00 PM - 4:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Business",
@@ -37,7 +37,7 @@
         "level": "Graduate",
         "semester": "Fall",
         "session": "2023/2024",
-        "timetable": "Friday 11:00 AM - 1:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Law",
@@ -45,7 +45,7 @@
         "level": "Undergraduate",
         "semester": "Spring",
         "session": "2023/2024",
-        "timetable": "Monday 3:00 PM - 5:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Education",
@@ -53,7 +53,7 @@
         "level": "Graduate",
         "semester": "Summer",
         "session": "2023/2024",
-        "timetable": "Tuesday 10:00 AM - 12:00 PM"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Science",

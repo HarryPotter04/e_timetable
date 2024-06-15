@@ -5,7 +5,7 @@
         "level": "100",
         "semester": "First",
         "session": "2023/2024",
-        "timetable": "Mon 9-11, Wed 2-4"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Engineering",
@@ -13,7 +13,7 @@
         "level": "200",
         "semester": "Second",
         "session": "2023/2024",
-        "timetable": "Tue 10-12, Thu 3-5"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Arts",
@@ -21,7 +21,7 @@
         "level": "300",
         "semester": "First",
         "session": "2023/2024",
-        "timetable": "Mon 11-1, Fri 2-4"
+        "timetable": "ASCII.pdf"
     },
     {
         "faculty": "Business",
