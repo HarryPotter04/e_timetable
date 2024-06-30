@@ -1,6 +1,6 @@
 [
     {
-        "faculty": "Science",
+        "day": "Monday",
         "department": "Computer Science",
         "level": "Undergraduate",
         "semester": "Fall",
@@ -8,7 +8,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Arts",
+        "day": "Tuesday",
         "department": "History",
         "level": "Undergraduate",
         "semester": "Spring",
@@ -16,7 +16,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Engineering",
+        "day": "Wednesday",
         "department": "Mechanical Engineering",
         "level": "Graduate",
         "semester": "Summer",
@@ -24,7 +24,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Medicine",
+        "day": "Thursday",
         "department": "Nursing",
         "level": "Undergraduate",
         "semester": "Winter",
@@ -32,7 +32,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Business",
+        "day": "Friday",
         "department": "Marketing",
         "level": "Graduate",
         "semester": "Fall",
@@ -40,7 +40,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Law",
+        "day": "Saturday",
         "department": "Corporate Law",
         "level": "Undergraduate",
         "semester": "Spring",
@@ -48,7 +48,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Education",
+        "day": "Sunday",
         "department": "Primary Education",
         "level": "Graduate",
         "semester": "Summer",

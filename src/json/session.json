@@ -1,6 +1,6 @@
 [
     {
-        "faculty": "Science",
+        "day": "Monday",
         "department": "Biology",
         "level": "100",
         "semester": "First",
@@ -8,7 +8,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Engineering",
+        "day": "Tuesday",
         "department": "Mechanical",
         "level": "200",
         "semester": "Second",
@@ -16,7 +16,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Arts",
+        "day": "Wednesday",
         "department": "History",
         "level": "300",
         "semester": "First",
@@ -24,7 +24,7 @@
         "timetable": "ASCII.pdf"
     },
     {
-        "faculty": "Business",
+        "day": "Thursday",
         "department": "Finance",
         "level": "400",
         "semester": "Second",
@@ -32,7 +32,7 @@
         "timetable": "Wed 9-11, Fri 1-3"
     },
     {
-        "faculty": "Medicine",
+        "day": "Friday",
         "department": "Nursing",
         "level": "500",
         "semester": "First",
