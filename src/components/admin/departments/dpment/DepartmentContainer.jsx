@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import DashboardSearch from '../../../DashboardSearch'
 import TableSkeletonLoader from '../../../skeleton/TableSkeletonLoader'
-import departments from '../../../../json/departments.json'
 import DepartmentTable from './DepartmentTable'
+import { useSelector } from 'react-redux'
+import { departmentState } from '../../../../features/slices/timetable/departmentSlice'
 
 const DepartmentContainer = () => {
 
-    const [loading, setLoading] = useState(true)
-
-    setTimeout(() => {
-        setLoading(false)
-    }, 1000);
+    const {loading, departments} = useSelector(departmentState)
 
     const initialFormData = {
         search: '',

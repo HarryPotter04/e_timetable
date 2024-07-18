@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import DashboardSearch from '../../../DashboardSearch'
 import TableSkeletonLoader from '../../../skeleton/TableSkeletonLoader'
 import FacultyTable from './FacultyTable'
-import faculties from '../../../../json/faculties.json'
+
+import { useSelector } from "react-redux";
+import { facultyState } from "../../../../features/slices/timetable/facultySlice";
 
 const FacultyContainer = () => {
+    const { facultys } = useSelector(facultyState);
 
     const [loading, setLoading] = useState(true)
 
@@ -33,7 +36,7 @@ const FacultyContainer = () => {
 
                 ) : (
 
-                    <FacultyTable datas={faculties} />
+                    <FacultyTable datas={facultys} />
 
                 )}
 

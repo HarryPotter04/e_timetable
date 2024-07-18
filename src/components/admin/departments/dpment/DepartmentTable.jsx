@@ -1,5 +1,6 @@
 import React from "react";
 import { EachElement } from "../../../../utils/Each";
+import DepartmentEntry from "./DepartmentEntry";
 
 const DepartmentTable = ({ datas }) => {
 
@@ -47,26 +48,7 @@ const DepartmentTable = ({ datas }) => {
                                     <EachElement
                                         of={datas}
                                         render={(data, index) => (
-                                            <tr key={index}>
-                                                <td className="px-6 py-3 whitespace-nowrap">
-                                                    <span className="block text-xs pb-0 mb-0 text-dark">
-                                                        {data.name}
-                                                    </span>
-                                                </td>
-                                                <td className="px-6 py-3 whitespace-nowrap">
-                                                    <div className="">
-                                                        <span className="block text-xs text-textColor">
-                                                            {data.faculty}
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td className="relative px-6 py-3 whitespace-nowrap">
-                                                    <div className="flex items-center gap-x-2">
-                                                        <button className="btn btn-primary py-1.5 rounded-full text-xs">Edit</button>
-                                                        <button className="btn bg-danger py-1.5 text-white rounded-full text-xs">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <DepartmentEntry data={data} key={index} />
                                         )}
                                     />
                                 </tbody>

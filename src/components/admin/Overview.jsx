@@ -7,8 +7,8 @@ import ReportIcon from "../icons/ReportIcon"
 import { facultyState } from "../../features/slices/timetable/facultySlice"
 
 const Overview = () => {
-    const { departments, loading: dptLoading } = useSelector(departmentState);
-    const { facultys, loading: fctyLoading } = useSelector(facultyState);
+    const { departments } = useSelector(departmentState);
+    const { facultys } = useSelector(facultyState);
 
     return (
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">

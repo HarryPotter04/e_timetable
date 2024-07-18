@@ -4,7 +4,7 @@ import TableEntry from "./TableEntry";
 
 const DashboardTable = ({ datas }) => {
   const getTableHeading = datas[0];
-
+  
   return (
     <div className="mx-auto">
       <div className="flex flex-col">
@@ -25,9 +25,9 @@ const DashboardTable = ({ datas }) => {
                   {getTableHeading.session.years_name} Course Timetable
                 </h1>
 
-                <div className="space-y-10">
-                  <div className="flex items-center space-x-4 ">
-                    <h1 className="px-6 py-3 text-dark font-semibold w-28">
+                <div className="space-y-10 ">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
+                    <h1 className="px-6 py-3 text-dark font-semibold w-28"> 
                       Monday
                     </h1>
 
@@ -41,7 +41,7 @@ const DashboardTable = ({ datas }) => {
                     />
                   </div>
 
-                  <div className="flex items-center space-x-4 ">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Tuesday
                     </h1>
@@ -56,7 +56,7 @@ const DashboardTable = ({ datas }) => {
                     />
                   </div>
 
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Wednesday
                     </h1>
@@ -70,7 +70,7 @@ const DashboardTable = ({ datas }) => {
                       }
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Thursday
                     </h1>
@@ -84,7 +84,7 @@ const DashboardTable = ({ datas }) => {
                       }
                     />
                   </div>
-                  <div className="flex items-center space-x-4 ">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Friday
                     </h1>
@@ -98,7 +98,7 @@ const DashboardTable = ({ datas }) => {
                       }
                     />
                   </div>
-                  <div className="flex items-center space-x-4 ">
+                  <div className="flex items-center space-x-4  border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Saturday
                     </h1>
@@ -112,7 +112,7 @@ const DashboardTable = ({ datas }) => {
                       }
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
                     <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Sunday
                     </h1>
@@ -128,18 +128,6 @@ const DashboardTable = ({ datas }) => {
                   </div>
                 </div>
 
-                {/*                           
-                          <td className="relative px-6 py-3 whitespace-nowrap">
-                            <div className="flex items-center gap-x-2">
-                              <button className="btn btn-primary py-1.5 rounded-full text-xs">
-                                Edit
-                              </button>
-
-                              <button className="btn bg-danger py-1.5 text-white rounded-full text-xs">
-                                Delete
-                              </button>
-                            </div>
-                          </td>{" "} */}
               </>
             )}
           </div>

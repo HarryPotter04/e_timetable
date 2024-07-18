@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddTimetable from "../timetable/AddTimetable";
-import DeleteTimetable from "../timetable/DeleteTimetable";
+import DeleteModal from "../departments/DeleteModal";
 
 const TableEntry = ({data}) => {
   const [open, setOpen] = useState(false)
@@ -25,7 +25,7 @@ const TableEntry = ({data}) => {
       </span>
 
       <AddTimetable data={data} open={open} setOpen={setOpen} />
-      <DeleteTimetable data={data} openDel={openDel} setOpenDel={setOpenDel} />
+      <DeleteModal data={data} openDel={openDel} setOpenDel={setOpenDel} name="timetable" />
     </div>
   );
 };
