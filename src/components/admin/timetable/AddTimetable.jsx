@@ -1,6 +1,7 @@
-  import DialogContainer from "../../ui/modals/Dialog";
+import DialogContainer from "../../ui/modals/Dialog";
 import { Form, Formik } from "formik";
 import CustomInput from "../../FormElements/CustomInput";
+import CustomTimepicker from "../../FormElements/CustomTimepicker";
 import Button from "../../ui/buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { facultyState } from "../../../features/slices/timetable/facultySlice";
@@ -61,6 +62,7 @@ const AddTimetable = ({ open, setOpen, data }) => {
             onSubmit={async (values, actions) => {
               if (data) {
                 const { id } = data;
+                console.log(values);
                 dispatch(editTimetable({ id, values }));
               } else {
                 dispatch(createTimetable(values));
@@ -171,18 +173,8 @@ const AddTimetable = ({ open, setOpen, data }) => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <CustomInput
-                    label="Start Time"
-                    name="start_time"
-                    type="text"
-                    placeholder="10:00 AM"
-                  />
-                  <CustomInput
-                    label="End Time"
-                    name="end_time"
-                    type="text"
-                    placeholder="12:00 PM"
-                  />
+                  <CustomTimepicker label="Start Time" name="start_time" />
+                  <CustomTimepicker label="End Time" name="end_time" />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-7">

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DashboardSearch from '../../../DashboardSearch'
 import TableSkeletonLoader from '../../../skeleton/TableSkeletonLoader'
 import DepartmentTable from './DepartmentTable'
-import { useSelector } from 'react-redux'
-import { departmentState } from '../../../../features/slices/timetable/departmentSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { departmentState, getDepartmentSearch } from '../../../../features/slices/timetable/departmentSlice'
 
 const DepartmentContainer = () => {
 
@@ -14,6 +14,12 @@ const DepartmentContainer = () => {
     };
 
     const [search, setSearch] = useState(initialFormData);
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getDepartmentSearch(search.search));
+      }, [search, dispatch]);
 
     return (
         <>

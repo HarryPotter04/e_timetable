@@ -18,6 +18,22 @@ export const getFacultys = createAsyncThunk(
   }
 );
 
+export const getFacultySearch = createAsyncThunk(
+  "get/facultysearch",
+  async (search, thunkAPI) => {
+    try {
+      const { data } = await axiosInstance.get(
+        `api/v1/faculties/?faculty=${search}`
+      );
+      return data;
+    } catch (error) {
+      const errMsg = getErrorMessage(error);
+      errorToast(errMsg);
+      return thunkAPI.rejectWithValue(errMsg);
+    }
+  }
+);
+
 export const createFaculty = createAsyncThunk(
   "create/faculty",
   async (obj, thunkAPI) => {
@@ -83,6 +99,16 @@ const facultySlice = createSlice({
         state.loading = true;
       })
       .addCase(getFacultys.rejected, (state, action) => {
+        state.loading = false;
+      })
+      .addCase(getFacultySearch.fulfilled, (state, action) => {
+        state.loading = false;
+        state.facultys = action.payload;
+      })
+      .addCase(getFacultySearch.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(getFacultySearch.rejected, (state, action) => {
         state.loading = false;
       })
       .addCase(createFaculty.fulfilled, (state, action) => {
