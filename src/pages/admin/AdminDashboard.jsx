@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DashboardLayout from "./../../components/layouts/DashboardLayout";
 import Overview from "../../components/admin/Overview";
 import TableSkeletonLoader from "../../components/skeleton/TableSkeletonLoader";
 import DashboardTable from "../../components/admin/dashboard/DashboardTable";
-import DashboardSearch from "../../components/DashboardSearch";
 import BreadCrumb from "../../components/Breadcrumb";
 
 import { useSelector } from "react-redux";
@@ -21,7 +20,6 @@ const AdminDashboard = () => {
       <Overview />
 
       <div className="mt-10">
-        {/* <DashboardSearch search={search} setSearch={setSearch} /> */}
         <TimeTableSearch  />
       </div>
 

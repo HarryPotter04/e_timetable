@@ -1,15 +1,22 @@
 import { Form, Formik } from 'formik';
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { LoginSchema } from '../../utils/schema';
 import CustomInput from '../../components/FormElements/CustomInput';
 import CustomPassword from '../../components/FormElements/CustomPassword';
 import Button from '../../components/ui/buttons/Button';
 import { useNavigate } from 'react-router-dom';
+import { login, userLoginState } from '../../features/slices/admin/userLoginSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
-
-    const [loading, setLoading] = useState(false)
+    const {loading, user} = useSelector(userLoginState)
     const navigate = useNavigate();
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        user?.access && navigate('/admin/dashboard')
+    }, [user, navigate])
 
     return (
         <>
@@ -32,27 +39,28 @@ const Login = () => {
 
                         <Formik
                             initialValues={{
-                                email: '',
+                                username: '',
                                 password: ''
                             }}
                             validationSchema={LoginSchema}
                             onSubmit={async (values, actions) => {
 
-                                setLoading(true)
+                                // setLoading(true)
                                 
-                                setTimeout(() => {
-                                    navigate('/admin/dashboard')
-                                    setLoading(false)
-                                }, 500);
+                                // setTimeout(() => {
+                                //     navigate('/admin/dashboard')
+                                //     setLoading(false)
+                                // }, 500);
+                                dispatch(login(values))
 
                             }}
                         >
 
                             {(props) => (
 
-                                <Form autoComplete='off'>
+                                <Form autoComplete='on'>
 
-                                    <CustomInput label="Email address" name="email" type="email" placeholder="example@gmail.com" />
+                                    <CustomInput label="Username" name="username" type="text" placeholder="rammy" />
 
                                     <CustomPassword label="Password" name="password" placeholder="**********" />
 

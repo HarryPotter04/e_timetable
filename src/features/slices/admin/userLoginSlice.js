@@ -50,5 +50,5 @@ const userLoginSlice = createSlice({
   },
 });
 
-export const userLoginState = (state) => state.user;
+export const userLoginState = (state) => state.admin.user;
 export default userLoginSlice.reducer;

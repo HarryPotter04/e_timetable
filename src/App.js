@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './utils/ProtectedRoute';
 import AuthLayout from './utils/AuthLayout';
@@ -10,8 +10,18 @@ import './assets/css/style.css'
 import ManageTimeTable from './pages/admin/ManageTimeTable';
 import ManageDepartment from './pages/admin/ManageDepartment';
 import ManageStaff from './pages/admin/Staffs';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLoginState } from './features/slices/admin/userLoginSlice';
+import { getUser } from './features/slices/admin/getUserSlice';
 
 const App = () => {
+  const { user } = useSelector(userLoginState)
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    user?.access && dispatch(getUser())
+  },[user, dispatch])
+
   return (
     <>
       <Routes>

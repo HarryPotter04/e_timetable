@@ -47,6 +47,6 @@ const registerSlice = createSlice({
   },
 });
 
-export const registerState = (state) => state.register;
+export const registerState = (state) => state.admin.register;
 
 export default registerSlice.reducer;

@@ -39,5 +39,5 @@ const getUserSlice = createSlice({
   },
 });
 
-export const getUserState = (state) => state.getUser;
+export const getUserState = (state) => state.admin.getUser;
 export default getUserSlice.reducer;
