@@ -13,17 +13,20 @@ import {
   deleteTimetable,
   timetableState,
 } from "../../../features/slices/timetable/timetableSlice";
+import { deleteUser, registerState } from "../../../features/slices/admin/registerSlice";
 
 const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
   const { loading } = useSelector(departmentState);
-  const { fctyLoading } = useSelector(facultyState);
-  const { tLoading } = useSelector(timetableState);
+  const { loading: fctyLoading } = useSelector(facultyState);
+  const { loading: tLoading } = useSelector(timetableState);
+  const { loading: UserLoading } = useSelector(registerState);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
     name === "department" && dispatch(deleteDepartment(id));
     name === "faculty" && dispatch(deleteFaculty(id));
     name === "timetable" && dispatch(deleteTimetable(id));
+    name === "staff" && dispatch(deleteUser(id))
   };
 
   const closeDialog = () => {
@@ -42,7 +45,7 @@ const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
           Are you sure you want to delete "
           {name === "timetable"
             ? `${data?.course} on ${data?.day.name}`
-            : data?.name}
+            : data?.name || data?.fullname}
           "
         </h1>
 
@@ -65,6 +68,8 @@ const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
                 ? loading
                 : name === "faculty"
                 ? fctyLoading
+                : name === "staff"
+                ? UserLoading
                 : name === "timetable" && tLoading
             }
             onClick={() => handleDelete(data.id)}
@@ -73,6 +78,8 @@ const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
               ? "Delete Department"
               : name === "faculty"
               ? "Delete Faculty"
+              : name === "staff" 
+              ? "Delete Staff"
               : name === "timetable" && "Delete Timetable Entry"}
           </Button>
         </div>

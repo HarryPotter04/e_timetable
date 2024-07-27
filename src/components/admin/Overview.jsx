@@ -5,10 +5,12 @@ import FacilityIcon from "../icons/FacilityIcon"
 import PeopleIcon from "../icons/PeopleIcon"
 import ReportIcon from "../icons/ReportIcon"
 import { facultyState } from "../../features/slices/timetable/facultySlice"
+import { registerState } from "../../features/slices/admin/registerSlice"
 
 const Overview = () => {
     const { departments } = useSelector(departmentState);
     const { facultys } = useSelector(facultyState);
+    const { users } = useSelector(registerState);
 
     return (
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
@@ -51,10 +53,10 @@ const Overview = () => {
                         <FacilityIcon className='w-4 h-4' color='#1D2329' />
                     </div>
 
-                    <h2 className="text-textColor">Schools</h2>
+                    <h2 className="text-textColor">School</h2>
                 </div>
 
-                <h2 className='text-2xl font-medium'> <Counter value={2345} /> </h2>
+                <p className='text-xl font-medium'> Ogun State Institute of Technology </p>
 
             </div>
 
@@ -69,7 +71,7 @@ const Overview = () => {
                     <h2 className="text-textColor">Staffs</h2>
                 </div>
 
-                <h2 className='text-2xl font-medium'> <Counter value={123} /> </h2>
+                <h2 className='text-2xl font-medium'> <Counter value={users.length} /> </h2>
 
             </div>
 

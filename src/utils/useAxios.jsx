@@ -70,7 +70,7 @@ axiosInstance.interceptors.response.use(
     }
 
     if (error?.response?.status === 401) {
-      // logoutAction();
+      logoutAction();
       return Promise.reject(error);
     }
 

@@ -7,12 +7,10 @@ import errorToast from "../../../utils/errorToast";
 export const getDays = createAsyncThunk('get/days', async (_, thunkAPI) => {
     try {
         const {data} = await axiosInstance.get('api/v1/days/')
-        console.log(data)
         return data
     }catch (error) {
         const errMsg = getErrorMessage(error);
         errorToast(errMsg);
-        console.log(errMsg);
         return thunkAPI.rejectWithValue(errMsg);
     }
 })

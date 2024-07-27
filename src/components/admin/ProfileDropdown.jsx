@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import Avatar from '../Avatar';
 import { Link } from 'react-router-dom';
+import { logoutAction } from '../../features/slices/admin/userLoginSlice';
 
 const ProfileDropdown = ({ user }) => {
 
@@ -76,15 +77,15 @@ const ProfileDropdown = ({ user }) => {
 
                 <div className="px-4 space-y-3">
 
-                    <Link onClick={closeDropdown} href="/admin/dashboard/settings" className="block w-full cursor-pointer text-slate-600 hover:text-dark">
+                    {/* <Link onClick={closeDropdown} href="/admin/dashboard/settings" className="block w-full cursor-pointer text-slate-600 hover:text-dark">
                         Account Settings
                     </Link>
 
                     <Link onClick={closeDropdown} href="#" className="block w-full cursor-pointer text-slate-600 hover:text-dark">
                         Help Desk
-                    </Link>
+                    </Link> */}
 
-                    <Link to="#" className="block w-full cursor-pointer text-slate-600 hover:text-dark">
+                    <Link to="#" onClick={() => logoutAction()} className="block w-full cursor-pointer text-slate-600 hover:text-dark">
                         Sign Out
                     </Link>
 

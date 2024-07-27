@@ -1,25 +1,22 @@
 import { useState } from 'react';
-import DashboardSearch from '../../components/DashboardSearch';
+// import DashboardSearch from '../../components/DashboardSearch';
 import TableSkeletonLoader from '../../components/skeleton/TableSkeletonLoader'
 import DashboardLayout from './../../components/layouts/DashboardLayout'
-import staffs from '../../json/staffs.json'
 import StaffTable from '../../components/admin/staffs/StaffTable';
 import BreadCrumb from '../../components/Breadcrumb';
 import AddStaffModal from '../../components/admin/staffs/AddStaffModal';
+import { useSelector } from 'react-redux';
+import { registerState } from '../../features/slices/admin/registerSlice';
 
 const ManageStaff = () => {
 
-    const [loading, setLoading] = useState(true)
+    const {loading, users} = useSelector(registerState)
 
-    setTimeout(() => {
-        setLoading(false)
-    }, 1000);
+    // const initialFormData = {
+    //     search: '',
+    // };
 
-    const initialFormData = {
-        search: '',
-    };
-
-    const [search, setSearch] = useState(initialFormData);
+    // const [search, setSearch] = useState(initialFormData);
     const [open, setOpen] = useState(false)
 
     return (
@@ -34,7 +31,7 @@ const ManageStaff = () => {
 
             <button onClick={() => setOpen(true)} className="btn btn-primary py-2.5 rounded-full text-xs mt-5 mb-8">Add Staff</button>
 
-            <DashboardSearch search={search} setSearch={setSearch} />
+            {/* <DashboardSearch search={search} setSearch={setSearch} /> */}
 
             <div className="bg-white px-2 py-3 rounded-lg mt-4">
 
@@ -44,7 +41,7 @@ const ManageStaff = () => {
 
                 ) : (
 
-                    <StaffTable datas={staffs} />
+                    <StaffTable datas={users} />
 
                 )}
 

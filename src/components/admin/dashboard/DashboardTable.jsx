@@ -18,7 +18,7 @@ const DashboardTable = ({ datas }) => {
               </div>
             ) : (
               <>
-                <h1 className="font-semibold text-xl mb-5 p-3">
+                <h1 className="font-semibold text-xl mb-5 p-3 text-primary">
                   {getTableHeading.faculty.acronym}{" "}
                   {getTableHeading.department.name} {getTableHeading.level.name}{" "}
                   {getTableHeading.semester.name}{" "}

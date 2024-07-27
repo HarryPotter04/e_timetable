@@ -2,18 +2,20 @@ import DialogContainer from '../../ui/modals/Dialog'
 import { Form, Formik } from 'formik'
 import CustomInput from '../../FormElements/CustomInput'
 import CustomPassword from '../../FormElements/CustomPassword'
-import { useState } from 'react'
+
 import { addStaff } from '../../../utils/schema'
 import Button from '../../ui/buttons/Button'
-import CustomSelect from '../../FormElements/CustomSelect'
 
-const AddStaffModal = ({ open, setOpen }) => {
+import { useDispatch, useSelector } from 'react-redux'
+import { editUser, registerState, registerUser } from '../../../features/slices/admin/registerSlice'
+
+const AddStaffModal = ({ open, setOpen, data }) => {
+    const {loading} = useSelector(registerState)
+    const dispatch = useDispatch()
 
     const closeDialog = () => {
         setOpen(false)
     }
-
-    const [loading, setLoading] = useState(false)
 
     return (
         <>
@@ -24,19 +26,20 @@ const AddStaffModal = ({ open, setOpen }) => {
 
                     <Formik
                         initialValues={{
-                            name: '',
-                            email: '',
-                            role: '',
-                            password: '',
+                            fullname: data?.fullname || '',
+                            email: data?.email || '',
+                            username: data?.username || '',
+                            password: data?.password || '',
                         }}
                         validationSchema={addStaff}
                         onSubmit={async (values, actions) => {
-
-                            setLoading(true)
-
-                            setTimeout(() => {
-                                setLoading(false)
-                            }, 500);
+                            if(data) {
+                                const { id } = data
+                                dispatch(editUser({id, values}))
+                            } else {
+                                dispatch(registerUser(values))
+                            }
+                            closeDialog()
 
                         }}
                     >
@@ -47,18 +50,14 @@ const AddStaffModal = ({ open, setOpen }) => {
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-4">
 
-                                    <CustomInput label="Full Name" name="name" type="text" placeholder="Dominic Praise" />
+                                    <CustomInput label="Full Name" name="fullname" type="text" placeholder="Dominic Praise" />
 
                                     <CustomInput label="Email Address" name="email" type="email" placeholder="Enter email address" />
 
                                 </div>
+                                 <CustomInput label="Username" name="username" type="text" placeholder="Enter Username" />
 
-                                <CustomSelect label="Role" name="role">
-                                    <option value="" disabled selected> Select Role </option>
-                                    <option value="admin">Admin</option>
-                                </CustomSelect>
-
-                                <CustomPassword label="Password" name="password" placeholder="Enter Password" />
+                               {!data && <CustomPassword label="Password" name="password" placeholder="Enter Password" />}
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-7">
 

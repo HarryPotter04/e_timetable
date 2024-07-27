@@ -10,6 +10,7 @@ import { getSemesters } from '../../features/slices/timetable/semesterSlice';
 import { getLevels } from '../../features/slices/timetable/levelSlice';
 import { getDays } from '../../features/slices/days/daysSlice';
 import { getUserState } from '../../features/slices/admin/getUserSlice';
+import { getUsers } from '../../features/slices/admin/registerSlice';
 
 const DashboardLayout = ({ children }) => {
 
@@ -25,6 +26,7 @@ const DashboardLayout = ({ children }) => {
         dispatch(getSemesters())
         dispatch(getLevels())
         dispatch(getDays())
+        dispatch(getUsers())
       },[dispatch])
 
     const [open, setOpen] = useState(false)
