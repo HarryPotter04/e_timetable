@@ -13,6 +13,8 @@ import ManageStaff from './pages/admin/Staffs';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLoginState } from './features/slices/admin/userLoginSlice';
 import { getUser } from './features/slices/admin/getUserSlice';
+import Home from './pages/homepage/Home';
+import Timetable from './pages/homepage/Timetable';
 
 const App = () => {
   const { user } = useSelector(userLoginState)
@@ -26,10 +28,13 @@ const App = () => {
     <>
       <Routes>
 
+        <Route path="" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/timetable" element={<Timetable />} />
         <Route path="/" element={<AuthLayout />}>
 
           {/* AUTHENTICATIONS */}
-          <Route path="" element={<Login />} />
+          {/* <Route path="" element={<Login />} /> */}
           <Route path="login" element={<Login />} />
 
           {/* ADMIN ROUTES */}

@@ -1,68 +1,110 @@
-@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+@import url("https://fonts.cdnfonts.com/css/euclid-circular-a");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import "swiper/css";
+@import "swiper/css/autoplay";
+@import "aos/dist/aos.css";
+
 html,
 body {
-    box-sizing: border-box;
-    font-family: 'Euclid Circular A', sans-serif !important;
+  box-sizing: border-box;
+  font-family: "Euclid Circular A", sans-serif !important;
 }
 
-
 body {
-    overflow-x: hidden !important;
-    font-family: 'Euclid Circular A', sans-serif !important;
+  overflow-x: hidden !important;
+  font-family: "Euclid Circular A", sans-serif !important;
 }
 
 @layer base {
+  body {
+    @apply m-0 p-0 box-border overflow-x-hidden;
+  }
 
-    body {
-        @apply m-0 p-0 box-border overflow-x-hidden
-    }
+  .form-control {
+    @apply py-2.5 px-4 focus:outline-none focus:ring-0 block outline-none border tracking-tight border-gray-300 w-full rounded-xl text-xs font-normal text-opacity-80 text-dark focus:bg-white focus:shadow-md focus:border-[#18678480] focus:border-2 placeholder:text-xs placeholder:font-light;
+  }
 
-    .form-control {
-        @apply py-2.5 px-4 focus:outline-none focus:ring-0 block outline-none border tracking-tight border-gray-300 w-full rounded-xl text-xs font-normal text-opacity-80 text-dark focus:bg-white focus:shadow-md focus:border-[#18678480] focus:border-2 placeholder:text-xs placeholder:font-light
-    }
+  label {
+    @apply inline-block tracking-tight;
+  }
 
-    label {
-        @apply inline-block tracking-tight
-    }
+  .form-label {
+    @apply mb-[.5rem] text-xs font-medium text-dark;
+  }
 
-    .form-label {
-        @apply mb-[.5rem] text-xs font-medium text-dark
-    }
+  .btn {
+    @apply disabled:opacity-75 disabled:pointer-events-auto inline-block py-3 px-6 bg-transparent cursor-pointer rounded transition ease-in-out text-sm hover:ring-0;
+  }
 
-    .btn {
-        @apply disabled:opacity-75 disabled:pointer-events-auto inline-block py-3 px-6 bg-transparent cursor-pointer rounded transition ease-in-out text-sm hover:ring-0;
-    }
+  .btn-primary {
+    @apply bg-primary text-white hover:ring-offset-2 hover:ring-2;
+  }
 
-    .btn-primary {
-        @apply bg-primary text-white hover:ring-offset-2 hover:ring-2
-    }
+  .btn-outline {
+    @apply border text-dark border-primary hover:ring-offset-2 hover:ring-2;
+  }
 
-    .btn-outline {
-        @apply border text-dark border-primary hover:ring-offset-2 hover:ring-2
-    }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:ring-offset-2 hover:ring-2;
+  }
 
-    .btn-secondary {
-        @apply bg-secondary text-white hover:ring-offset-2 hover:ring-2
-    }
+  .btn-success {
+    @apply bg-success text-white hover:ring-offset-2 hover:ring-2;
+  }
 
-    .btn-success {
-        @apply bg-success text-white hover:ring-offset-2 hover:ring-2
-    }
+  .form-control.is-invalid,
+  .was-validated .form-control:invalid {
+    @apply border-red-600;
+  }
 
-    .form-control.is-invalid,
-    .was-validated .form-control:invalid {
-        @apply border-red-600
-    }
+  .shadow-soft-xl {
+    --tw-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+    --tw-shadow-colored: 0 20px 27px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
 
-    .shadow-soft-xl {
-        --tw-shadow: 0 20px 27px 0 rgba(0, 0, 0, .05);
-        --tw-shadow-colored: 0 20px 27px 0 var(--tw-shadow-color);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    }
+@keyframes fade-in-out {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  30%,
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60%,
+  80% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
 
+.fade-in-out {
+  opacity: 0;
+  animation: fade-in-out 12s infinite;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 6s;
+}
+.delay-2 {
+  animation-delay: 2s;
+}
+.delay-3 {
+  animation-delay: 8s;
 }

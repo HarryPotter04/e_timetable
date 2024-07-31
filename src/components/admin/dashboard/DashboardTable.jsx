@@ -2,9 +2,9 @@ import React from "react";
 import { EachElement } from "./../../../utils/Each";
 import TableEntry from "./TableEntry";
 
-const DashboardTable = ({ datas }) => {
+const DashboardTable = ({ datas, isStudent }) => {
   const getTableHeading = datas[0];
-  
+
   return (
     <div className="mx-auto">
       <div className="flex flex-col">
@@ -27,7 +27,7 @@ const DashboardTable = ({ datas }) => {
 
                 <div className="space-y-10 ">
                   <div className="flex items-center space-x-4 border-b border-slate-300 pb-6">
-                    <h1 className="px-6 py-3 text-dark font-semibold w-28"> 
+                    <h1 className="px-6 py-3 text-dark font-semibold w-28">
                       Monday
                     </h1>
 
@@ -35,7 +35,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Monday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -50,7 +54,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Tuesday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -65,7 +73,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Wednesday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -79,7 +91,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Thursday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -93,7 +109,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Friday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -107,7 +127,11 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Saturday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
@@ -121,13 +145,16 @@ const DashboardTable = ({ datas }) => {
                       of={datas}
                       render={(data, index) =>
                         data?.day?.name === "Sunday" && (
-                          <TableEntry data={data} key={index} />
+                          <TableEntry
+                            data={data}
+                            key={index}
+                            isStudent={isStudent}
+                          />
                         )
                       }
                     />
                   </div>
                 </div>
-
               </>
             )}
           </div>
