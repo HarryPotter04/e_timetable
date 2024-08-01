@@ -1,7 +1,15 @@
 import axios from "axios";
+import { jwtDecode as jwt_decode } from "jwt-decode";
+import dayjs from "dayjs";
 
 export const BASEURL = "http://localhost:8000/";
 // export const BASEURL = "";
+
+const logoutAction = () => {
+  localStorage.removeItem("e-timetable-admin");
+  localStorage.removeItem("active-admin");
+  window.location.pathname = "/login";
+};
 
 const getToken = () =>
   localStorage.getItem("e-timetable-admin")
@@ -14,7 +22,7 @@ const axiosInstance = axios.create({
 
   headers: {
     Accept: "application/json",
-    // Authorization: "Bearer " + token?.access,
+    "Content-Type": "application/json",
   },
 });
 
@@ -27,20 +35,49 @@ export const axiosFormInstance = axios.create({
   },
 });
 
-axiosInstance.interceptors.request.use(
-  (config) => {
-    const token = getToken();
+axiosInstance.interceptors.request.use(async (config) => {
+  const token = getToken();
 
-    if (!token?.access) return config;
+  if (!token?.access) return config;
 
+  const user = jwt_decode(token?.access);
+  const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
+
+  if (!isExpired) {
     config.headers.Authorization = `Bearer ${token?.access}`;
-
     return config;
-  },
+  }
+
+  const response = await axios.post(`${BASEURL}/api/v1/token/refresh/`, {
+    refresh: token?.refresh,
+  });
+  const newToken = response.data;
+  localStorage.setItem(
+    "e-timetable-admin",
+    JSON.stringify({ refresh: token?.refresh, access: newToken?.access })
+  );
+
+  config.headers.Authorization = `Bearer ${newToken?.access}`;
+  return config;
+});
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
   (error) => {
+    if (error.message.includes("Invalid token specified")) {
+      logoutAction();
+      return Promise.reject(error);
+    }
+
+    if (error?.response?.status === 401) {
+      logoutAction();
+      return Promise.reject(error);
+    }
+
     return Promise.reject(error);
   }
 );
+
 axiosFormInstance.interceptors.request.use(
   (config) => {
     const token = getToken();

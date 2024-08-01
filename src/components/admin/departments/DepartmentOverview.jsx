@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
+import { departmentState } from "../../../features/slices/timetable/departmentSlice";
+import { facultyState } from "../../../features/slices/timetable/facultySlice";
 import Counter from "../../Counter"
 import ReportIcon from "../../icons/ReportIcon"
 
 const DepartmentOverview = () => {
+    const { departments } = useSelector(departmentState);
+    const { facultys } = useSelector(facultyState);
 
     return (
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-6">
@@ -17,7 +22,7 @@ const DepartmentOverview = () => {
                     <h2 className="text-textColor">Departments</h2>
                 </div>
 
-                <h2 className='text-2xl font-medium'> <Counter value={234} /> </h2>
+                <h2 className='text-2xl font-medium'> <Counter value={departments.length} /> </h2>
 
             </div>
 
@@ -32,7 +37,7 @@ const DepartmentOverview = () => {
                     <h2 className="text-textColor">Faculty</h2>
                 </div>
 
-                <h2 className='text-2xl font-medium'> <Counter value={2324} /> </h2>
+                <h2 className='text-2xl font-medium'> <Counter value={facultys.length} /> </h2>
 
             </div>
 

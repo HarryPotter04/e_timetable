@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DashboardSearch from '../../../DashboardSearch'
 import TableSkeletonLoader from '../../../skeleton/TableSkeletonLoader'
-import departments from '../../../../json/departments.json'
 import DepartmentTable from './DepartmentTable'
+import { useDispatch, useSelector } from 'react-redux'
+import { departmentState, getDepartmentSearch } from '../../../../features/slices/timetable/departmentSlice'
 
 const DepartmentContainer = () => {
 
-    const [loading, setLoading] = useState(true)
-
-    setTimeout(() => {
-        setLoading(false)
-    }, 1000);
+    const {loading, departments} = useSelector(departmentState)
 
     const initialFormData = {
         search: '',
     };
 
     const [search, setSearch] = useState(initialFormData);
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getDepartmentSearch(search.search));
+      }, [search, dispatch]);
 
     return (
         <>

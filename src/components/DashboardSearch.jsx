@@ -20,6 +20,8 @@ const DashboardSearch = ({ setSearch }) => {
         return () => clearTimeout(typingTimeout);
     }, [searchQuery, setSearch]);
 
+    // console.log(searchQuery);
+
 
     return (
             <div className="flex sm:items-center justify-end flex-wrap gap-x-5 gap-y-3">
