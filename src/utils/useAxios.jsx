@@ -2,7 +2,7 @@ import axios from "axios";
 import { jwtDecode as jwt_decode } from "jwt-decode";
 import dayjs from "dayjs";
 
-export const BASEURL = "http://localhost:8000/";
+export const BASEURL = "https://scbqnlsv-8000.uks1.devtunnels.ms/";
 // export const BASEURL = "";
 
 const logoutAction = () => {
