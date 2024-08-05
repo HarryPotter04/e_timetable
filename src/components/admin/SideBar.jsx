@@ -4,11 +4,13 @@ import SidebarLink from '../SidebarLink';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Avatar from '../Avatar';
 import DashboardIcon from '../icons/DashboardIcon';
-import SettingsIcon from '../icons/SettingsIcon';
+// import SettingsIcon from '../icons/SettingsIcon';
 import Logo from './../../assets/images/logo.jpg'
 import ReportIcon from '../icons/ReportIcon';
 import PeopleIcon from '../icons/PeopleIcon';
 import InsightIcon from '../icons/InsightIcon';
+import LogoutIcon from '../icons/LogoutIcon';
+import { logoutAction } from '../../features/slices/admin/userLoginSlice';
 
 const SideBar = ({ open, setOpen, user }) => {
 
@@ -105,7 +107,7 @@ const SideBar = ({ open, setOpen, user }) => {
                         </ul>
                     </div>
 
-                    <div className="relative px-4">
+                    {/* <div className="relative px-4">
                         <hr className="mt-3 mb-6 border-t border-white/10" />
                         <ul className="flex flex-col pl-0 mb-0 list-none">
                             <li className="w-full mb-2.5">
@@ -119,20 +121,21 @@ const SideBar = ({ open, setOpen, user }) => {
                                 />
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
+
                 </div>
 
                 <div className="flex items-center gap-x-3 px-4 pt-12 absolute bottom-10">
                     <Avatar name={user?.fullname} size="h-10 w-10" bgColor="bg-white" textColor="text-dark" fontSize="text-base" />
-                    <Link to='/admin/dashboard/settings' className="flex-1">
+                    <Link onClick={() => logoutAction()} to='#' className="flex-1">
                         <span className='text-white text-xs font-medium overflow-hidden whitespace-nowrap overflow-ellipsis'>
                             {user?.fullname}
                         </span>
                         <p className='text-white text-[11px] font-light -mt-2'>{user?.email}</p>
                     </Link>
-                    {/* <button onClick={() => dispatch(Adminlogout())} className="cursor-pointer">
+                    <button onClick={() => logoutAction()} className="cursor-pointer">
                         <LogoutIcon className='w-6 h-6' color='#FFF' />
-                    </button> */}
+                    </button>
                 </div>
             </div>
         </>
