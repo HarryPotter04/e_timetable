@@ -15,6 +15,7 @@ import { userLoginState } from './features/slices/admin/userLoginSlice';
 import { getUser } from './features/slices/admin/getUserSlice';
 import Home from './pages/homepage/Home';
 import Timetable from './pages/homepage/Timetable';
+import ManageSessions from './pages/admin/Sessions';
 
 const App = () => {
   const { user } = useSelector(userLoginState)
@@ -45,6 +46,7 @@ const App = () => {
               <Route path="" element={<AdminDashboard />} />
               <Route path="timetable" element={<ManageTimeTable />} />
               <Route path="departments" element={<ManageDepartment />} />
+              <Route path="sessions" element={<ManageSessions />} />
               <Route path="staffs" element={<ManageStaff />} />
 
             </Route>

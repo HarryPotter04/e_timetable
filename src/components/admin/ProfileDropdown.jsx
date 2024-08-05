@@ -45,7 +45,7 @@ const ProfileDropdown = ({ user }) => {
 
                 <div className=" max-w-[120px] tracking-tighter hidden sm:block">
                     <span className='text-dark text-xs font-semibold overflow-hidden overflow-ellipsis'> {user?.fullname} </span>
-                    <p className='text-slate-600 text-[11px] font-light -mt-2 overflow-hidden overflow-ellipsis'> {user?.email} </p>
+                    <p className='text-slate-600 text-[11px] font-light mt-0 overflow-hidden overflow-ellipsis'> {user?.email} </p>
                 </div>
 
                 <div className="hidden sm:block">

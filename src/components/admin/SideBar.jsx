@@ -29,6 +29,12 @@ const SideBar = ({ open, setOpen, user }) => {
             activeIcon: <InsightIcon className='w-5 h-5' color='#186784' />
         },
         {
+            href: '/admin/dashboard/sessions',
+            text: 'Manage Sessions',
+            icon: <InsightIcon className='w-5 h-5' color='#FFF' />,
+            activeIcon: <InsightIcon className='w-5 h-5' color='#186784' />
+        },
+        {
             href: '/admin/dashboard/staffs',
             text: 'Manage Staffs',
             icon: <PeopleIcon className='w-5 h-5' color='#FFF' />,
