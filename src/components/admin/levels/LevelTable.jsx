@@ -1,5 +1,6 @@
 import React from "react";
 import { EachElement } from "../../../utils/Each";
+import LevelEntry from "./LevelEntry";
 
 const LevelTable = ({ datas }) => {
     return (
@@ -43,20 +44,7 @@ const LevelTable = ({ datas }) => {
                                     <EachElement
                                         of={datas}
                                         render={(data, index) => (
-                                            <tr key={index} className="flex">
-                                                <td className="px-6 py-3 whitespace-nowrap flex-1">
-                                                    <span className="block text-xs pb-0 mb-0 text-dark">
-                                                        {data}
-                                                    </span>
-                                                </td>
-                                                <td className="relative px-6 py-3 whitespace-nowrap flex-shrink-0 text-right">
-                                                    <div className="flex items-center gap-x-2 justify-end">
-                                                        <button className="btn bg-danger py-1.5 text-white rounded-full text-xs">
-                                                            Delete
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <LevelEntry data={data} key={index} />
                                         )}
                                     />
                                 </tbody>

@@ -30,11 +30,11 @@ const ProfileDropdown = ({ user }) => {
         };
     }, []);
 
-    const closeDropdown = () => {
-        setTimeout(() => {
-            setOpen(false);
-        }, 500);
-    };
+    // const closeDropdown = () => {
+    //     setTimeout(() => {
+    //         setOpen(false);
+    //     }, 500);
+    // };
 
     return (
         <div ref={profileMenu} className="relative inline-flex">

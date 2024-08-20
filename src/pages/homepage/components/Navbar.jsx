@@ -5,7 +5,7 @@ const Navbar = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
   return (
-    <nav className="mx-auto bg-white border-gray-200 ">
+    <nav className="mx-auto bg-white border-gray-200 " id="home">
       <div className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"

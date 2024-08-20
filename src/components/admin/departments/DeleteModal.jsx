@@ -13,20 +13,41 @@ import {
   deleteTimetable,
   timetableState,
 } from "../../../features/slices/timetable/timetableSlice";
-import { deleteUser, registerState } from "../../../features/slices/admin/registerSlice";
+import {
+  deleteUser,
+  registerState,
+} from "../../../features/slices/admin/registerSlice";
+import {
+  deleteSemester,
+  semesterState,
+} from "../../../features/slices/timetable/semesterSlice";
+import {
+  deleteSession,
+  sessionState,
+} from "../../../features/slices/timetable/sessionSlice";
+import {
+  deleteLevel,
+  levelState,
+} from "../../../features/slices/timetable/levelSlice";
 
 const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
   const { loading } = useSelector(departmentState);
   const { loading: fctyLoading } = useSelector(facultyState);
   const { loading: tLoading } = useSelector(timetableState);
-  const { loading: UserLoading } = useSelector(registerState);
+  const { loading: userLoading } = useSelector(registerState);
+  const { loading: semesterLoading } = useSelector(semesterState);
+  const { loading: sessionLoading } = useSelector(sessionState);
+  const { loading: levelLoading } = useSelector(levelState);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
     name === "department" && dispatch(deleteDepartment(id));
     name === "faculty" && dispatch(deleteFaculty(id));
-    name === "timetable" && dispatch(deleteTimetable(id));
-    name === "staff" && dispatch(deleteUser(id))
+    name === "timetable entry" && dispatch(deleteTimetable(id));
+    name === "staff" && dispatch(deleteUser(id));
+    name === "semester" && dispatch(deleteSemester(id));
+    name === "session" && dispatch(deleteSession(id));
+    name === "level" && dispatch(deleteLevel(id));
   };
 
   const closeDialog = () => {
@@ -43,9 +64,9 @@ const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
       <div className="p-5">
         <h1>
           Are you sure you want to delete "
-          {name === "timetable"
-            ? `${data?.course} on ${data?.day.name}`
-            : data?.name || data?.fullname}
+          {name === "timetable entry"
+            ? `${data?.course || data?.course_code} on ${data?.day.name}`
+            : data?.name || data?.fullname || data?.years_name}
           "
         </h1>
 
@@ -69,18 +90,18 @@ const DeleteModal = ({ data, openDel, setOpenDel, name }) => {
                 : name === "faculty"
                 ? fctyLoading
                 : name === "staff"
-                ? UserLoading
-                : name === "timetable" && tLoading
+                ? userLoading
+                : name === "semester"
+                ? semesterLoading
+                : name === "session"
+                ? sessionLoading
+                : name === "level"
+                ? levelLoading
+                : name === "timetable entry" && tLoading
             }
             onClick={() => handleDelete(data.id)}
           >
-            {name === "department"
-              ? "Delete Department"
-              : name === "faculty"
-              ? "Delete Faculty"
-              : name === "staff" 
-              ? "Delete Staff"
-              : name === "timetable" && "Delete Timetable Entry"}
+            Delete {name[0].toUpperCase() + name.slice(1)}
           </Button>
         </div>
       </div>

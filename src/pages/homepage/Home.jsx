@@ -96,7 +96,7 @@ const Home = () => {
 
       <section className="about min-h-screen mt-20" id="About">
         <h1
-          className="text-4xl font-extrabold text-center mb-3"
+          className="text-4xl font-extrabold text-center mb-3 mx-10"
           data-aos="flip-left"
         >
           What you need to know

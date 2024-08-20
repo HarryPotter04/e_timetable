@@ -42,7 +42,7 @@ const TableEntry = ({ data, isStudent }) => {
             data={data}
             openDel={openDel}
             setOpenDel={setOpenDel}
-            name="timetable"
+            name="timetable entry"
           />
         </>
       )}

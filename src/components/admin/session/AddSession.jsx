@@ -2,16 +2,18 @@
 import DialogContainer from '../../ui/modals/Dialog'
 import { Form, Formik } from 'formik'
 import CustomInput from '../../FormElements/CustomInput'
-import { useState } from 'react'
 import Button from '../../ui/buttons/Button'
+import { useDispatch, useSelector } from 'react-redux'
+import { createSession, sessionState } from '../../../features/slices/timetable/sessionSlice'
 
 const AddSession = ({ open, setOpen }) => {
+
+    const { loading } = useSelector(sessionState)
+    const dispatch = useDispatch()
 
     const closeDialog = () => {
         setOpen(false)
     }
-
-    const [loading, setLoading] = useState(false)
 
     return (
         <>
@@ -22,16 +24,10 @@ const AddSession = ({ open, setOpen }) => {
 
                     <Formik
                         initialValues={{
-                            name: '',
+                            years_name: '',
                         }}
                         onSubmit={async (values, actions) => {
-
-                            setLoading(true)
-
-                            setTimeout(() => {
-                                setLoading(false)
-                            }, 500);
-
+                            dispatch(createSession(values))
                         }}
                     >
 
@@ -39,7 +35,7 @@ const AddSession = ({ open, setOpen }) => {
 
                             <Form autoComplete='off'>
 
-                                <CustomInput label="Session" name="name" type="text" placeholder="2023/2024" />
+                                <CustomInput label="Session" name="years_name" type="text" placeholder="2023/2024" />
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-7">
 

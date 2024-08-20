@@ -1,3 +1,4 @@
+
 const Footer = () => {
   return (
     <footer id="footer" data-aos="zoom-in-right" className="bg-secondary px-10">
@@ -13,13 +14,13 @@ const Footer = () => {
           <div className="w-full lg:w-1/4 mt-10">
             <div className="flex flex-col gap-3">
               <h4 className="text-xl font-bold">Quick Links</h4>
-              <a href="#" className="text-gray-700 hover:text-gray-900">
+              <a href="#home" className="text-gray-700 hover:text-gray-900">
                 Home
               </a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">
+              <a href="#footer" className="text-gray-700 hover:text-gray-900">
                 Contact
               </a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">
+              <a href="#About" className="text-gray-700 hover:text-gray-900">
                 About
               </a>
             </div>

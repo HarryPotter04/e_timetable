@@ -12,6 +12,7 @@ html,
 body {
   box-sizing: border-box;
   font-family: "Euclid Circular A", sans-serif !important;
+  scroll-behavior: smooth;
 }
 
 body {
